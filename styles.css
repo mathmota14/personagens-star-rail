@@ -1,0 +1,309 @@
+@font-face {
+    font-family: "Beaufort Bold";
+    src: url(BeaufortforLOL-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Spiegel Regular";
+    src: url(Spiegel_TT_Regular.ttf);
+}
+
+/* Estiliza o corpo da página */
+body {
+    background-color: #DDDDDD; /* Cor de fundo da página */
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    height: 100vh; /* Preenche a altura total da viewport */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    padding-left: 2rem; /* Remove o padding à esquerda */
+    padding-right: 2rem; /* Remove o padding à direita */
+    overflow-x: hidden;
+}
+
+/* Estiliza o vídeo de fundo */
+#video-fundo {
+    position: fixed; /* O vídeo fica fixo no fundo da página */
+    top: 0; /* Alinha o vídeo ao topo */
+    left: 0; /* Alinha o vídeo à esquerda */
+    width: 100%; /* O vídeo ocupa toda a largura da tela */
+    height: 100%; /* O vídeo ocupa toda a altura da tela */
+    object-fit: cover; /* Garante que o vídeo preencha a tela sem distorção */
+    z-index: -2; /* Coloca o vídeo atrás de todos os elementos na página */
+}
+
+/* Adiciona um sombreamento ao vídeo de fundo */
+#video-sombreamento {
+    position: fixed; /* O sombreamento também fica fixo no fundo */
+    top: 0; /* Alinha o sombreamento ao topo */
+    left: 0; /* Alinha o sombreamento à esquerda */
+    width: 100%; /* O sombreamento ocupa toda a largura da tela */
+    height: 100%; /* O sombreamento ocupa toda a altura da tela */
+    background: linear-gradient(rgb(1, 10, 19), transparent 44%, transparent 58%, rgb(1, 10, 19)); /* Adiciona um gradiente para escurecer as bordas superior e inferior */
+    z-index: -1; /* Coloca o sombreamento atrás dos conteúdos principais, mas à frente do vídeo */
+}
+
+/* Estiliza os títulos h1 */
+h1 {
+    font-family: "Beaufort Bold", sans-serif; /* Define a fonte padrão */
+    font-size: 2.5rem; /* Tamanho da fonte */
+    color: #C89B3C; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    margin: 0;
+    margin-bottom: 1.5rem;
+    padding-top: 4rem;
+}
+
+img {
+    width: 50%;
+    user-select: none;
+}
+
+/* Estiliza as seções da página */
+#secao-inicial {
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 1.5rem;
+    margin-bottom: 2.5rem; /* Espaçamento abaixo de cada seção */
+}
+
+#quadro-de-elementos-caminhos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* Remove o estilo padrão da lista */
+.elementos, .caminhos {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    display: flex; /* Usa flexbox para alinhar horizontalmente */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a linha seguinte se não houver espaço */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo das imagens */
+.elementos img, .caminhos img {
+    background-color: rgba(29,29,29,0.95);
+    opacity: 0.98;
+    display: flex;
+    width: 3.5rem; /* Ajuste o tamanho das imagens conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    outline: 0.1rem #9c9c9c solid;
+    box-sizing: border-box;
+    margin-top: 0.1rem;
+    margin-left: 0.1rem;
+    border-radius: 1rem;
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+.selecionado {
+    background-color: #C89B3C !important;
+}
+
+/* Estilo para o hint (tooltip) */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    font-family: "Beaufort Bold", sans-serif; /* Define a fonte padrão */
+    background-color: #555; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    position: absolute;
+    bottom: 100%; /* Posiciona o hint acima do ícone */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; /* Invisível inicialmente */
+    visibility: hidden; /* Tooltip não visível inicialmente */
+    transition: opacity 0.3s; /* Suaviza a transição */
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1; /* Torna o hint visível ao passar o mouse */
+    visibility: visible; /* Torna o tooltip visível */
+}
+
+/* Estiliza os inputs dentro das seções */
+section input {
+    font-family: "Spiegel Regular", sans-serif;
+    width: 30rem; /* Largura dos inputs */
+    border: none; /* Remove a borda padrão */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 1.5rem; /* Borda arredondada */
+    color: #45474B; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    outline: none;
+    cursor: auto;
+    transition: 0.4s ease; /* Animação suave de 0.3 segundos */
+}
+
+/* Personaliza o estilo do campo de texto ao receber foco */
+section input:focus {
+    box-shadow: inset 0 0 0 0.1rem #463714; /* Define uma borda personalizada ao focar */
+}
+
+.lista-de-personagens {
+    display: grid; /* Ativa o Grid Layout */
+    grid-template-columns: repeat(5, 1fr); /* Cria 5 colunas de tamanho igual */
+    gap: 1rem; /* Espaçamento entre os itens */
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    margin: 2rem 0; /* Adiciona espaçamento acima e abaixo da lista */
+}
+
+.lista-de-personagens a {
+    text-align: center; /* Centraliza o conteúdo do link */
+    display: block; /* Faz o link ocupar todo o item */
+    position: relative; /* Necessário para posicionar o fundo e o texto */
+    overflow: hidden;
+    aspect-ratio: 190 / 265;
+    transition: transform 0.3s ease; /* Animação suave de 0.3 segundos */
+    user-select: none;
+}
+
+.lista-de-personagens a:hover {
+    transform: translateY(-5px) translateX(-2px); /* Move o item 5 pixels para cima */
+}
+
+.personagem-info {
+    font-family: "Spiegel Regular", sans-serif; /* Define a fonte do título */
+    position: absolute; /* Posiciona o fundo e o texto em relação ao link */
+    bottom: 0; /* Alinha o fundo e o texto ao fundo da imagem */
+    left: 0; /* Alinha o fundo e o texto à esquerda da imagem */
+    width: 100%; /* O fundo e o texto ocupam toda a largura da imagem */
+    height: 20%; /* O fundo ocupa 20% da altura da imagem */
+    background: rgba(0, 0, 0, 0.7); /* Cor de fundo com transparência */
+    color: #fff; /* Cor do texto */
+    display: flex; /* Usa Flexbox para centralizar o texto */
+    align-items: center; /* Alinha o texto verticalmente ao centro */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    font-size: 1.1rem; /* Tamanho da fonte do título */
+    padding: 0 0.7rem; /* Adiciona uma barreira de 10px à esquerda e à direita */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
+}
+
+.lista-de-personagens img {
+    width: 100%; /* Ajusta a imagem para preencher todo o item */
+    max-width: 250px; /* Define um tamanho máximo para a imagem */
+    height: 100%;
+    display: block; /* Garante que a imagem seja exibida como bloco */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner sem distorção */
+}
+
+.destruction{
+    transform: scale(3) translateY(0.9rem) translateX(-0.2rem); /* Aplica um zoom de 50% */
+}
+
+.preservation{
+    transform: scale(1.6) translateY(0.4rem) translateX(-1.2rem); /* Aplica um zoom de 50% */
+}
+
+.harmony{
+    transform: scale(4) translateY(0.5rem) translateX(-0.6rem); /* Aplica um zoom de 50% */
+}
+
+.acheron{
+    transform: scaleY(-1);
+}
+
+.xueyi{
+    transform: scale(1.6) translateY(-0.4rem);
+}
+
+
+footer {
+    font-family: "Spiegel Regular", sans-serif; /* Define a fonte do título */
+    background-color: #F5F7F8;
+    color: #45474B;
+    text-align: center;
+    width: 100vw; /* Usa a largura total da viewport */
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .lista-de-personagens {
+        grid-template-columns: repeat(4, 1fr); /* Exibe 4 colunas por linha em telas pequenas */
+    }
+    .personagem-info {
+        font-size: 1rem; /* Tamanho da fonte do título */
+    }
+    .harmony{
+        transform: scale(4) translateY(0.5rem) translateX(-0.45rem); /* Aplica um zoom de 50% */
+    }
+    .elementos img, .caminhos img {
+        width: 2.7rem; /* Ajuste o tamanho das imagens conforme necessário */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Tamanho da fonte em telas menores */
+        letter-spacing: 0.2rem; /* Espaçamento entre letras em telas menores */
+    }
+
+    section input {
+        width: 25rem; /* Largura dos inputs em telas menores */
+        padding: 0.8rem; /* Espaçamento interno em telas menores */
+    }
+
+    .personagem-info{
+        height: 25%;
+        font-size: 1rem; /* Tamanho da fonte do título */
+    }
+
+    .lista-de-personagens {
+        grid-template-columns: repeat(3, 1fr); /* Exibe 3 colunas por linha em telas menores */
+    }
+
+    .harmony{
+        transform: scale(4) translateY(0.4rem) translateX(-0.35rem); /* Aplica um zoom de 50% */
+    }
+
+    #quadro-de-elementos-caminhos {
+        flex-direction: column;
+    }
+
+    .caminhos {
+        margin-top: 1rem; /* Adiciona espaço entre os campos de elementos e caminhos */
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* Tamanho da fonte em telas pequenas */
+        letter-spacing: 0.1rem; /* Espaçamento entre letras em telas pequenas */
+    }
+
+    section input {
+        width: 17rem; /* Largura dos inputs em telas pequenas */
+    }
+
+    .elementos img, .caminhos img {
+        width: 2.2rem; /* Ajuste o tamanho das imagens conforme necessário */
+        border-radius: 0.7rem;
+    }
+
+    .personagem-info{
+        font-size: 0.9rem; /* Tamanho da fonte do título */
+    }
+
+    .lista-de-personagens {
+        grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas por linha em telas pequenas */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Tamanho da fonte do rodapé em telas pequenas */
+    }
+}

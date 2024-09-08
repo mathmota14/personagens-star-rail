@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Honkai: Star Rail</title>
+</head>
+<body>
+    <header>
+        <h1>Personagens de Star Rail</h1>
+    </header>
+    <main>
+
+        <section id="secao-inicial">
+            <video autoplay muted loop id="video-fundo">
+                <source src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/101831/f54aaca7603e2c81de7f59f2ba27ace5_1530189916137544025.mp4" type="video/mp4" alt="Vídeo de fundo">
+            </video>
+            <div id="video-sombreamento"></div>
+            <img src="https://brand.riotgames.com/images/league-of-legends/decorator-hr-lg.png" alt="Ícone simples">
+            <input id="campo-pesquisa" type="text" placeholder="Digite o nome de um personagem">
+        </section>
+
+        <section id="quadro-de-elementos-caminhos">
+            <ul class="elementos">
+                <li id="Físico">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/6/69/Type_Physical.png" alt="Físico">
+                        <span class="tooltiptext">Físico</span>
+                    </div>
+                </li>
+                <li id="Fogo">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/f/f0/Type_Fire.png" alt="Fogo">
+                        <span class="tooltiptext">Fogo</span>
+                    </div>
+                </li>
+                <li id="Gelo">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/3/35/Type_Ice.png" alt="Gelo">
+                        <span class="tooltiptext">Gelo</span>
+                    </div>
+                </li>
+                <li id="Imaginário">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/2/2f/Type_Imaginary.png" alt="Imaginário">
+                        <span class="tooltiptext">Imaginário</span>
+                    </div>
+                </li>
+                <li id="Quântico">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/5/54/Type_Quantum.png" alt="Quântico">
+                        <span class="tooltiptext">Quântico</span>
+                    </div>
+                </li>
+                <li id="Raio">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/1/15/Type_Lightning.png" alt="Raio">
+                        <span class="tooltiptext">Raio</span>
+                    </div>
+                </li>
+                <li id="Vento">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/ec/Type_Wind.png" alt="Vento">
+                        <span class="tooltiptext">Vento</span>
+                    </div>
+                </li>
+            </ul>
+        
+            <ul class="caminhos">
+                <li id="Abundância">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/9/94/Path_Abundance.png" alt="Abundância">
+                        <span class="tooltiptext">Abundância</span>
+                    </div>
+                </li>
+                <li id="Caça">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/1/1c/Path_The_Hunt.png" alt="Caça">
+                        <span class="tooltiptext">Caça</span>
+                    </div>
+                </li>
+                <li id="Destruição">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/d/df/Path_Destruction.png" alt="Destruição">
+                        <span class="tooltiptext">Destruição</span>
+                    </div>
+                </li>
+                <li id="Erudição">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/5/53/Path_Erudition.png" alt="Erudição">
+                        <span class="tooltiptext">Erudição</span>
+                    </div>
+                </li>
+                <li id="Harmonia">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/7/7e/Path_Harmony.png" alt="Harmonia">
+                        <span class="tooltiptext">Harmonia</span>
+                    </div>
+                </li>
+                <li id="Inexistência">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/4/45/Path_Nihility.png" alt="Inexistência">
+                        <span class="tooltiptext">Inexistência</span>
+                    </div>
+                </li>
+                <li id="Preservação">
+                    <div class="tooltip">
+                        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/3/37/Path_Preservation.png" alt="Preservação">
+                        <span class="tooltiptext">Preservação</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+
+        <section class="lista-de-personagens" id="lista-de-personagens">
+        </section>
+
+    </main>
+
+    <footer>
+        <p>2024 - Personagens de Star Rail. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="dados.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
