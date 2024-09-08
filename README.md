@@ -34,7 +34,7 @@ O projeto possui as seguintes funcionalidades interativas:
 
 ### Via Vercel
 
-1. Acesse o projeto pelo link: Link no Vercel.
+1. Acesse o projeto pelo link: https://personagens-star-rail.vercel.app
 
 ## 🤝 Gostaria de contribuir?
 
